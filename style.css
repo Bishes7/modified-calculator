@@ -1,0 +1,128 @@
+:root {
+  --primary-color: green;
+  --secondary-color: skyblue;
+  --tr-color: yellow;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 1.3rem;
+}
+.wrapper {
+  background: radial-gradient(var(--primary-color), var(--tr-color));
+  min-height: 100vh;
+}
+
+.display {
+  background: var(--secondary-color);
+  padding: 2rem;
+  grid-area: display;
+}
+.calculator {
+  background: orangered;
+  width: 450px;
+  padding: 2rem 1.5rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-areas:
+    "display display display display"
+    "ac c per slash"
+    "btn7 btn8 btn9 star"
+    "btn4 btn5 btn6 minus"
+    "btn1 btn2 btn3 plus"
+    "btn0 dot equal equal";
+  box-shadow: 0px 20px 5px gray;
+  border-radius: 10px;
+  transform: perspective(60rem) rotateX(30deg);
+
+  animation: moment 2s;
+}
+
+.btn {
+  background: var(--tr-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  border-radius: 8px;
+  box-shadow: 0px 20px 5px gray;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background: var(--secondary-color);
+  transition: all 0.5s;
+}
+.btn-ac {
+  grid-area: ac;
+}
+.btn-c {
+  grid-area: c;
+}
+
+.btn-per {
+  grid-area: per;
+}
+.btn-slash {
+  grid-area: slash;
+}
+.btn-7 {
+  grid-area: btn7;
+}
+.btn-8 {
+  grid-area: btn8;
+}
+.btn-9 {
+  grid-area: btn9;
+}
+.btn-star {
+  grid-area: star;
+}
+.btn-4 {
+  grid-area: btn4;
+}
+.btn-5 {
+  grid-area: btn5;
+}
+.btn-6 {
+  grid-area: btn6;
+}
+.btn-minus {
+  grid-area: minus;
+}
+.btn-1 {
+  grid-area: btn1;
+}
+.btn-2 {
+  grid-area: btn2;
+}
+.btn-3 {
+  grid-area: btn3;
+}
+.btn-plus {
+  grid-area: plus;
+}
+.btn-0 {
+  grid-area: btn0;
+}
+.btn-dot {
+  grid-area: dot;
+}
+.btn-equal {
+  grid-area: equal;
+}
+
+@keyframes moment {
+  0% {
+    transform: perspective(10rem) rotateX(30deg);
+  }
+  100% {
+    transform: perspective(60rem) rotateX(30deg);
+  }
+}
